@@ -9,13 +9,17 @@ from .models import (
     Submission
 )
 
-# <HINT> Register QuestionInline and ChoiceInline classes here
+class ChoiceInLine(admin.StackedInline):
+    model = Choice
+    extra = 2
 
+class QuestionInLine(admin.StackedInline):
+    model = Question
+    extra = 2
 
 class LessonInline(admin.StackedInline):
     model = Lesson
     extra = 5
-
 
 # Register your models here.
 class CourseAdmin(admin.ModelAdmin):
