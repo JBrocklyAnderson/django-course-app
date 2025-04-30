@@ -28,10 +28,12 @@ class CourseAdmin(admin.ModelAdmin):
     list_filter = ['pub_date']
     search_fields = ['name', 'description']
 
-
 class LessonAdmin(admin.ModelAdmin):
     list_display = ['title']
 
+class QuestionAdmin(admin.ModelAdmin):
+    inlines = [ChoiceInLine]
+    list_display = ['content']
 
 # <HINT> Register Question and Choice models here
 
